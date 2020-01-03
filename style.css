@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box
+}
+body {
+  margin: 0;
+  overflow-x: hidden
+}
+.main {
+  background-color: #000;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: Roboto
+}
+header {
+  text-align: center
+}
+text {
+  fill: #fff;
+  font-family: Roboto
+}
+.graph-container {
+  background-color: #212121;
+  color: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-x: auto
+}
+.d3-wrapper {
+  position: relative
+}
+.tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  padding: 10px;
+  font-size: 1em;
+  background: #000;
+  border-radius: 5px;
+  pointer-events: none
+}
+.axis-label {
+  font-size: 1.5em
+}
+.cell:hover {
+  stroke: black;
+  stroke-width: 1px;
+}
