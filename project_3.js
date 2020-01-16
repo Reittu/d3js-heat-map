@@ -56,20 +56,20 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
       .attr('id', 'y-axis')
       .call(yAxis)
       .append('text')
-      .text('Months')
       .attr('transform', `translate(-90, ${INNER_HEIGHT / 2}), rotate(-90)`)
       .attr('class', 'axis-label')
       .style('text-anchor', 'middle')
+      .text('Months');
 
     svg.append('g')
       .attr('id', 'x-axis')
       .attr('transform', `translate(0, ${INNER_HEIGHT})`)
       .call(xAxis)
       .append('text')
-      .text('Years')
       .attr('transform', `translate(${INNER_WIDTH / 2}, 50)`)
       .attr('class', 'axis-label')
       .style('text-anchor', 'middle')
+      .text('Years');
 
     const legendColors = d3.schemeRdYlBu[11].reverse();
     const legendWidth = 400;
@@ -114,11 +114,11 @@ d3.json('https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
         return d;
       }))
       .enter().append('rect')
-      .style('fill', (d) => legendThreshold(d[0]))
       .attr('x', (d) => legendScale(d[0])) // Position at min
       .attr('y', 0)
       .attr('width', (d) => legendScale(d[1]) - legendScale(d[0])) // Position at max - position at min
-      .attr('height', legendHeight);
+      .attr('height', legendHeight)
+      .style('fill', (d) => legendThreshold(d[0]));
 
     legend.append('g')
       .attr('transform', `translate(0, ${legendHeight})`)
